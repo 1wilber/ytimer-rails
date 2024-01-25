@@ -44,3 +44,5 @@ end
 
 # default template engine
 gem "haml-rails", "~> 2.1"
+
+gem "rails-i18n", "~> 7.0"
