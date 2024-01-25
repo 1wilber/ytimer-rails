@@ -8,9 +8,6 @@ gem "rails", "~> 7.1.3"
 # The original asset pipeline for Rails [https://github.com/rails/sprockets-rails]
 gem "sprockets-rails"
 
-# Use sqlite3 as the database for Active Record
-gem "sqlite3", "~> 1.4"
-
 # Use the Puma web server [https://github.com/puma/puma]
 gem "puma", ">= 5.0"
 
@@ -31,11 +28,20 @@ gem "tzinfo-data", platforms: %i[windows jruby]
 
 # Reduces boot times through caching; required in config/boot.rb
 gem "bootsnap", require: false
+
 group :development, :test do
   gem "debug", platforms: %i[mri windows]
   gem "solargraph", require: false
   gem "standardrb", require: false
   gem "rufo", require: false
+  gem "factory_bot_rails"
+  gem "ffaker"
+end
+
+group :test do
+  gem "database_cleaner-active_record"
+  gem "rspec-rails"
+  gem "shoulda-matchers"
 end
 
 group :development do
@@ -45,8 +51,11 @@ end
 # default template engine
 gem "haml-rails"
 
+# rails internationalization support
 gem "rails-i18n"
 
+# custom flash messages
 gem "responders"
 
+# better form builder
 gem "simple_form"
