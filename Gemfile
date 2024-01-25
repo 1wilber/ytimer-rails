@@ -48,3 +48,5 @@ gem "haml-rails"
 gem "rails-i18n"
 
 gem "responders"
+
+gem "simple_form"

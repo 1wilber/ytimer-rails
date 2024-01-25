@@ -244,6 +244,9 @@ GEM
     ruby-progressbar (1.13.0)
     ruby2_keywords (0.0.5)
     rufo (0.17.0)
+    simple_form (5.3.0)
+      actionpack (>= 5.2)
+      activemodel (>= 5.2)
     solargraph (0.50.0)
       backport (~> 1.2)
       benchmark
@@ -332,6 +335,7 @@ DEPENDENCIES
   rails-i18n
   responders
   rufo
+  simple_form
   solargraph
   sprockets-rails
   sqlite3 (~> 1.4)
