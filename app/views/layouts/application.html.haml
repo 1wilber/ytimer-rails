@@ -4,6 +4,11 @@
     %meta{:content => "text/html; charset=UTF-8", "http-equiv" => "Content-Type"}/
     %title Ytimer
     %meta{:content => "width=device-width,initial-scale=1", :name => "viewport"}/
+
+    -# fonts
+    %link{href: "https://fonts.googleapis.com", rel: "preconnect"}/
+    %link{crossorigin: "", href: "https://fonts.gstatic.com", rel: "preconnect"}/
+    %link{href: "https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap", rel: "stylesheet"}/
     = csrf_meta_tags
     = csp_meta_tag
     = stylesheet_link_tag "application", "data-turbo-track": "reload"
@@ -11,4 +16,21 @@
   %body
     %p= notice
     %p= alert
+    %nav.navbar{"aria-label" => "main navigation", role: "navigation"}
+      .navbar-brand
+        %a.navbar-item{href: "https://bulma.io"}
+          %img{height: "28", src: "https://bulma.io/images/bulma-logo.png", width: "112"}/
+        %a.navbar-burger{"aria-expanded": "false", "aria-label": "menu", "data-target": "navbarBasicExample", role: "button"}
+          %span{"aria-hidden" => "true"}
+          %span{"aria-hidden" => "true"}
+          %span{"aria-hidden" => "true"}
+      #navbarBasicExample.navbar-menu.is-active
+        .navbar-start
+          %a.navbar-item
+            Home
+        .navbar-end
+          .navbar-item
+            .buttons
+              = link_to "Sign up", new_user_registration_path, class: "button is-primary"
+              = link_to "Log in", new_user_session_path, class: "button is-light"
     = yield
