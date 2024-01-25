@@ -16,15 +16,15 @@
   %body
     %p= notice
     %p= alert
-    %nav.navbar{"aria-label" => "main navigation", role: "navigation"}
+    %nav.navbar{"data-controller": "toggle", "data-hidden-class": "is-active"}
       .navbar-brand
         %a.navbar-item{href: "https://bulma.io"}
           %img{height: "28", src: "https://bulma.io/images/bulma-logo.png", width: "112"}/
-        %a.navbar-burger{"aria-expanded": "false", "aria-label": "menu", "data-target": "navbarBasicExample", role: "button"}
+        %a.navbar-burger{"data-action": "toggle#toggle", "data-toggle-target": "navbar"}
           %span{"aria-hidden" => "true"}
           %span{"aria-hidden" => "true"}
           %span{"aria-hidden" => "true"}
-      #navbarBasicExample.navbar-menu.is-active
+      #navbarBasicExample.navbar-menu{"data-toggle-name": "navbar"}
         .navbar-start
           %a.navbar-item
             Home
