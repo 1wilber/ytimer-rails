@@ -31,6 +31,6 @@
         .navbar-end
           .navbar-item
             .buttons
-              = link_to "Sign up", new_user_registration_path, class: "button is-primary"
-              = link_to "Log in", new_user_session_path, class: "button is-light"
+              = link_to I18n.t('devise.registrations.new.sign_up'), new_user_registration_path, class: "button is-primary"
+              = link_to I18n.t('devise.sessions.new.sign_in'), new_user_session_path, class: "button is-light"
     = yield

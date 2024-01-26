@@ -64,3 +64,5 @@ gem "simple_form"
 
 # authentication
 gem "devise"
+
+gem "devise-i18n", "~> 1.12"

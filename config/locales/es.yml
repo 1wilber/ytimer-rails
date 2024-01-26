@@ -1,0 +1,10 @@
+es:
+  activerecord:
+    attributes:
+      user:
+        name: Nombre
+        username: Usuario
+  devise:
+    title:
+      registrations: Crear una cuenta
+

@@ -1,0 +1,26 @@
+.hero.is-fullheight-with-navbar
+  .hero-body.is-align-items-center.is-justify-content-center.is-flex-direction-column
+    .card{style: "max-width: 500px; width: 100%;"}
+      .card-content
+        %h2.is-size-4.has-text-centered.has-text-weight-bold.mb-5= I18n.t("devise.title.registrations")
+        = simple_form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f|
+          .form-inputs
+            = f.input :name,
+              required: false,
+              autofocus: true,
+              input_html: { autocomplete: "name" }
+            = f.input :username,
+              required: false,
+              input_html: { autocomplete: "username" }
+            = f.input :email,
+              required: false,
+              input_html: { autocomplete: "email" }
+            = f.input :password,
+              required: false,
+              hint: ("#{@minimum_password_length} characters minimum" if @minimum_password_length),
+              input_html: { autocomplete: "new-password" }
+            = f.input :password_confirmation,
+              required: false,
+              input_html: { autocomplete: "new-password" }
+          .form-actions
+            = f.button :submit, I18n.t("devise.registrations.new.sign_up"), class: "is-primary is-fullwidth mt-3"

@@ -37,3 +37,8 @@ $primary: #2d3436;
 // @import "bulma/sass/layout/section.sass";
 
 @import 'bulma/bulma';
+
+body, html {
+  height: 100%;
+  background-color: $white-bis;
+}
