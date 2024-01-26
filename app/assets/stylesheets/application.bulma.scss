@@ -42,3 +42,22 @@ body, html {
   height: 100%;
   background-color: $white-bis;
 }
+
+.notification {
+  @extend .notification;
+
+  position: absolute;
+  top: 1rem;
+  right: 1rem;
+  z-index: 1000;
+  min-width: calc(100vw - 2rem);
+
+  &:hover {
+    cursor: pointer;
+  }
+
+  @media screen and (min-width: $desktop) {
+    min-width: 20rem;
+  }
+
+}

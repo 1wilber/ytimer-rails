@@ -1,0 +1,8 @@
+- if notice
+  .notification.is-success{data: {controller: "toggle", "hidden-class": "is-hidden", "toggle-name": "notification"}}
+    %button.delete{data: {action: "toggle#toggle", "toggle-target": "notification"}}
+    %span= notice
+- if alert
+  .notification.is-danger{data: {controller: "toggle", "hidden-class": "is-hidden", "toggle-name": "notification-error"}}
+    %button.delete{data: {action: "toggle#toggle", "toggle-target": "notification-error"}}
+    %span= alert

@@ -14,8 +14,7 @@
     = stylesheet_link_tag "application", "data-turbo-track": "reload"
     = javascript_importmap_tags
   %body
-    %p= notice
-    %p= alert
+    = render "shared/flash"
     %nav.navbar{"data-controller": "toggle", "data-hidden-class": "is-active"}
       .navbar-brand
         %a.navbar-item{href: "https://bulma.io"}
