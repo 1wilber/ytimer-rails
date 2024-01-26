@@ -7,4 +7,5 @@ es:
   devise:
     title:
       registrations: Crear una cuenta
+      sessions: Iniciar sesión
 
