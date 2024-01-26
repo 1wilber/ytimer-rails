@@ -10,20 +10,41 @@
 // $beige-light: #D0D1CD;
 // $beige-lighter: #EFF0EB;
 
-// Update Bulma's global variables
-$family-sans-serif: "Poppins", sans-serif;
-// $grey-dark: $brown;
-// $grey-light: $beige-light;
-$primary: #2d3436;
-// $link: $pink;
-// $widescreen-enabled: false;
-// $fullhd-enabled: false;
+// ytimer colors
+$grey-blue: #2A303C;
+$grey-blue-dark: #242933;
+$grey-blue-light: #A6ADBB;
+$green-apple: #8ACA7A;
 
-// Update some of Bulma's component variables
-// $body-background-color: $beige-lighter;
-// $control-border-width: 2px;
-// $input-border-color: transparent;
-// $input-shadow: none;
+// sidebar variables
+
+$sidebar-width: 260px;
+
+// text colors
+$text: $grey-blue-light;
+$text-strong: $grey-blue-light;
+
+// border colors
+$border: $grey-blue-dark;
+
+// background colors
+$scheme-main: $grey-blue;
+$scheme-main-bis: $grey-blue-dark;
+$sheme-main-ter: $grey-blue-light;
+
+// card
+$card-background-color: $grey-blue-dark;
+
+// navbar
+$navbar-background-color: $grey-blue-dark;
+
+// table
+
+$table-cell-padding: 1rem;
+
+
+$family-sans-serif: "Poppins", sans-serif;
+$primary: $green-apple;
 
 // Import only what you need from Bulma
 // @import "bulma/sass/utilities/_all.sass";
@@ -40,7 +61,6 @@ $primary: #2d3436;
 
 body, html {
   height: 100%;
-  background-color: $white-bis;
 }
 
 .notification {
@@ -60,4 +80,52 @@ body, html {
     min-width: 20rem;
   }
 
+}
+
+
+aside {
+  @extend .p-4;
+  width: $sidebar-width;
+  position: fixed;
+  height: 100%;
+  transition: all 0.3s ease-in-out;
+  transform: translateX(-100%);
+  background-color: $scheme-main-bis;
+  display: block;
+  border-right: 1px solid $scheme-main-bis;
+  border-radius: 0px 15px 15px 0px;
+
+  @include from($desktop) {
+    transform: translateX(0);
+  }
+
+  &.is-active {
+    transform: translateX(0%);
+  }
+}
+
+.table-container {
+  @extend .table-container;
+
+  overflow: auto;
+  -ms-overflow-style: none;  /* Internet Explorer 10+ */
+  scrollbar-width: none;  /* Firefox */
+
+  height: calc(100vh - 8rem);
+}
+.table-container::-webkit-scrollbar {
+  display: none;  /* Safari and Chrome */
+}
+
+main {
+  @extend .p-4;
+
+  @include from($desktop) {
+    margin-left: $sidebar-width;
+  }
+}
+
+.table {
+  @extend .table;
+  width: 100%;
 }
