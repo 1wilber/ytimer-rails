@@ -10,9 +10,35 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.1].define(version: 2024_01_25_220116) do
+ActiveRecord::Schema[7.1].define(version: 2024_01_30_165113) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
+  create_table "events", force: :cascade do |t|
+    t.string "name"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "results", force: :cascade do |t|
+    t.integer "time"
+    t.bigint "event_id", null: false
+    t.bigint "user_id", null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.string "scramble"
+    t.index ["event_id"], name: "index_results_on_event_id"
+    t.index ["user_id"], name: "index_results_on_user_id"
+  end
+
+  create_table "selected_events", force: :cascade do |t|
+    t.bigint "event_id", null: false
+    t.bigint "user_id", null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["event_id"], name: "index_selected_events_on_event_id"
+    t.index ["user_id"], name: "index_selected_events_on_user_id", unique: true
+  end
 
   create_table "users", force: :cascade do |t|
     t.string "email", default: "", null: false
@@ -29,4 +55,8 @@ ActiveRecord::Schema[7.1].define(version: 2024_01_25_220116) do
     t.index ["username"], name: "index_users_on_username", unique: true
   end
 
+  add_foreign_key "results", "events"
+  add_foreign_key "results", "users"
+  add_foreign_key "selected_events", "events"
+  add_foreign_key "selected_events", "users"
 end

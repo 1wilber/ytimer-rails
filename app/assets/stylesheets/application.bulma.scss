@@ -118,8 +118,6 @@ aside {
 }
 
 main {
-  @extend .p-4;
-
   @include from($desktop) {
     margin-left: $sidebar-width;
   }

@@ -32,6 +32,7 @@ gem "tzinfo-data", platforms: %i[windows jruby]
 gem "bootsnap", require: false
 
 group :development, :test do
+  gem "byebug"
   gem "debug", platforms: %i[mri windows]
   gem "solargraph", require: false
   gem "standardrb", require: false
@@ -65,4 +66,6 @@ gem "simple_form"
 # authentication
 gem "devise"
 
-gem "devise-i18n", "~> 1.12"
+gem "devise-i18n"
+
+gem "scrambler"

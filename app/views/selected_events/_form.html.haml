@@ -1,0 +1,2 @@
+= simple_form_for selected_event, method: :put do |f|
+  = f.input :event_id, collection: Event.all, label: false, input_html: { class: 'is-fullwidth', onchange: 'this.form.requestSubmit();' }

@@ -1,0 +1,5 @@
+= simple_form_for result, method: :post, html: { class: 'column is-4', data: {'timer-target': 'form'} } do |f|
+  = f.input :time, as: :hidden, input_html: { data: { 'timer-target': 'timeInput' } }
+  = f.input :scramble, as: :hidden
+  = f.input :event_id, as: :hidden
+  = f.submit 'Submit', class: 'is-hidden'

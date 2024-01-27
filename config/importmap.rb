@@ -7,3 +7,4 @@ pin "@hotwired/stimulus-loading", to: "stimulus-loading.js"
 pin "stimulus-toggle-util" # @0.4.1
 pin_all_from "app/javascript/controllers", under: "controllers"
 pin "stimulus" # @1.1.1
+pin "stimulus-hotkeys" # @2.3.0

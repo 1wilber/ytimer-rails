@@ -1,0 +1,29 @@
+%aside.has-text-centered.p-4.is-flex.is-flex-direction-column
+  %span.is-size-2.has-text-white.has-text-weight-bold.mb-5 YTimer
+  = turbo_frame_tag 'selected_event_form' do
+    = render partial: 'selected_events/form', locals: { selected_event: current_user.selected_event }
+  %button.button.is-primary.is-fullwidth.mb-5 Limpiar tiempos
+  .table-container
+    .columns
+      %div.column
+        %p.is-size-4.has-text-weight-bold.mb-4{style: "border-bottom: 1px solid gray;"} Tiempos
+        = turbo_frame_tag 'results' do
+          = render @results
+%main.hero.is-fullheight
+  .hero-head.is-hidden-desktop
+    .navbar
+      .container
+        .navbar-brand
+          .navbar-item 
+          .navbar-burger
+            %span
+            %span
+            %span
+  %div
+    .section.has-text-centered
+      = render partial: 'scrambles/scramble', locals: { scramble: @scramble }
+    .section.is-large.has-text-centered
+      %p.is-size-1.has-text-weight-bold{data:{'timer-target': 'display' }} --:--:--
+    .section.p-0
+      = turbo_frame_tag 'new_result' do
+        = render partial: 'results/form', locals: { result: @result }
