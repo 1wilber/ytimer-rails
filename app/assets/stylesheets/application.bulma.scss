@@ -1,15 +1,5 @@
 @charset "utf-8";
 
-// Import a Google Font
-// @import url('https://fonts.googleapis.com/css?family=Nunito:400,700');
-
-// Set your brand colors
-// $purple: #8A4D76;
-// $pink: #FA7C91;
-// $brown: #757763;
-// $beige-light: #D0D1CD;
-// $beige-lighter: #EFF0EB;
-
 // ytimer colors
 $grey-blue: #2A303C;
 $grey-blue-dark: #242933;
@@ -126,4 +116,13 @@ main {
 .table {
   @extend .table;
   width: 100%;
+}
+
+.result-table {
+  @extend .columns
+}
+
+.result-table-item {
+  @extend .column;
+  border-bottom: 1.5px solid $grey-blue;
 }

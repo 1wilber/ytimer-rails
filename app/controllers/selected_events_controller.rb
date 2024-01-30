@@ -10,6 +10,9 @@ class SelectedEventsController < TimerController
       ),
       turbo_stream.update(
         'selected_event_form', partial: 'selected_events/form', locals: { selected_event: @selected_event },
+      ),
+      turbo_stream.update(
+        :results, partial: 'results/result', collection: current_user.results.where(event: @selected_event.event),
       )
     ]
   end

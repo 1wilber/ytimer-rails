@@ -1,0 +1,13 @@
+= turbo_frame_tag dom_id(@result, :show) do
+  .modal.is-active
+    .modal-background{onclick: "location.href='#{root_path}'"}
+    .modal-content.card
+      .card-header
+        .card-header-title.p-3.is-justify-content-space-between
+          %p.is-size-4= ms_to_time @result.time
+          %p.is-size-6= @result.created_at.strftime("%d %B %Y")
+      .card-content
+        .box
+          %p=@result.scramble
+      %footer.p-3.is-flex
+        = button_to 'Eliminar', @result, method: :delete, data: { confirm: '¿Estás seguro?' }, class: 'button is-danger'

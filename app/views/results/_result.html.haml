@@ -1,3 +1,4 @@
-%div.columns{style: 'border-bottom: 1px solid gray', 'data-tooltip': "Tooltip Text"}
-  %span.column= result.id
-  %span.column.has-text-weight-semibold= ms_to_time(result.time)  
+%tr{is: 'turbo-frame', id: dom_id(result)}
+  %td= result.id
+  %td
+    = link_to ms_to_time(result.time), result, class: 'has-text-primary'

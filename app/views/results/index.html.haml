@@ -1,3 +1,5 @@
+= turbo_frame_tag 'show_result' do
+  %span
 %aside.has-text-centered.p-4.is-flex.is-flex-direction-column
   %span.is-size-2.has-text-white.has-text-weight-bold.mb-5 YTimer
   = turbo_frame_tag 'selected_event_form' do
@@ -6,9 +8,13 @@
   .table-container
     .columns
       %div.column
-        %p.is-size-4.has-text-weight-bold.mb-4{style: "border-bottom: 1px solid gray;"} Tiempos
-        = turbo_frame_tag 'results' do
-          = render @results
+        %table.table
+          %thead
+            %tr
+              %th #
+              %th Tiempo
+          %tbody{is: 'turbo-frame', id: 'results'}
+            = render @results
 %main.hero.is-fullheight
   .hero-head.is-hidden-desktop
     .navbar
